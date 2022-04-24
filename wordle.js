@@ -1,11 +1,10 @@
-export default Wordle = (guess, solution) => {
-
+export const check = (guess, solution) => {
   const splitSolution = solution.split('')
   const splitGuess = guess.split('')
 
   const solutionCharsTaken = splitSolution.map((_) => false)
 
-  const statuses = Array.from(Array(guess.length))
+  const statuses = Array.from(Array(guess.length));
 
   /*
    Correct Cases
@@ -13,7 +12,7 @@ export default Wordle = (guess, solution) => {
 
   splitGuess.forEach((letter, i) => {
     if (letter === splitSolution[i]) {
-      statuses[i] = 'correct'
+      statuses[i] = '0'
       solutionCharsTaken[i] = true
       return
     }
@@ -27,7 +26,7 @@ export default Wordle = (guess, solution) => {
     if (statuses[i]) return
 
     if (!splitSolution.includes(letter)) {
-      statuses[i] = 'absent'
+      statuses[i] = '2'
       return
     }
 
@@ -40,11 +39,11 @@ export default Wordle = (guess, solution) => {
     )
 
     if (indexOfPresentChar > -1) {
-      statuses[i] = 'present'
+      statuses[i] = '1'
       solutionCharsTaken[indexOfPresentChar] = true
       return
     } else {
-      statuses[i] = 'absent'
+      statuses[i] = '2'
       return
     }
   })
