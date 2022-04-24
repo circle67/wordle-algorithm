@@ -4,9 +4,9 @@ This is matching algorithm of WORDLE game. You can implement the algorithm to bu
 ## Basic Usage
 
 ```js
-import { Wordle } from './wordle';
+import { check } from './wordle';
 
-Wordle(guess, solution);
+check(guess, solution);
 ```
 
 ## Return Type
