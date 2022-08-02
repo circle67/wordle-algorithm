@@ -1,5 +1,5 @@
 # WORDLE Algorithm
-This is matching algorithm of WORDLE game. You can implement the algorithm to build your desired application.
+This is matching algorithm of Wordle game in Javascript.
 
 ## Basic Usage
 
